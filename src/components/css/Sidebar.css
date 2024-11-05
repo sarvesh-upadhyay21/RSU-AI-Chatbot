@@ -1,0 +1,144 @@
+/* Sidebar.css */
+.sidebar {
+    width: 240px;
+    background-color: #5f90da;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    height: 100vh; /* Full viewport height */
+    position: fixed; /* Fix the sidebar position */
+    left: 0;
+    top: 0;
+    overflow-y: auto; /* Enable scrolling */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    display: flex;
+    flex-direction: column;
+    /* Add smooth scrolling */
+    scroll-behavior: smooth;
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 3px;
+    }
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.5);
+    }
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    background-color: #5f90da; /* Same as sidebar */
+    z-index: 1;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.user-name {
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.menu li {
+    margin-bottom: 8px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-item i {
+    font-size: 18px;
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+}
+
+.menu-item.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+}
+
+.unread-badge {
+    background-color: #ff4757;
+    color: white;
+    font-size: 12px;
+    border-radius: 12px;
+    padding: 2px 8px;
+    margin-left: auto;
+    font-weight: 500;
+}
+
+/* Icon classes */
+.icon-home::before {
+    content: "\1F3E0";
+}
+
+.icon-policy::before {
+    content: "\1F4D6";
+}
+
+.icon-tickets::before {
+    content: "\1F3AB";
+}
+
+/* Adjust main content to account for fixed sidebar */
+.main-content {
+    margin-left: 240px;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Media query for responsive design */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}

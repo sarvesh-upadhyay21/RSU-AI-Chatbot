@@ -1,0 +1,68 @@
+/* ChatInput.css */
+.chat-input-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .chat-input-form {
+    display: flex;
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .chat-input-field {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+  
+  .chat-input-field:focus {
+    border-color: #c37373;
+  }
+  
+  .chat-send-button {
+    padding: 12px 24px;
+    background-color: #c37373;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .chat-send-button:hover {
+    background-color: #b56363;
+  }
+  
+  .chat-send-button:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .chat-input-container {
+      padding: 12px;
+    }
+  
+    .chat-input-field {
+      padding: 10px 14px;
+      font-size: 14px;
+    }
+  
+    .chat-send-button {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  }
